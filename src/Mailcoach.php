@@ -23,25 +23,24 @@ class Mailcoach
     ) {
         $this->client = new Client([
             'http_errors' => false,
-            'base_uri' => $this->baseUri . '/',
+            'base_uri' => $this->baseUri.'/',
             'headers' => [
                 'Authorization' => "Bearer {$this->apiToken}",
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
-            ]
+            ],
         ]);
     }
 
     /**
-     * @param array<int, mixed> $collection
-     * @param class-string<ApiResource> $class
-     *
+     * @param  array<int, mixed>  $collection
+     * @param  class-string<ApiResource>  $class
      * @return array<int, ApiResource>
      */
     protected function transformCollection(array $collection, string $class): array
     {
         return array_map(
-            fn($attributes) => new $class($attributes, $this),
+            fn ($attributes) => new $class($attributes, $this),
             $collection,
         );
     }

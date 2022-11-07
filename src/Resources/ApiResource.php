@@ -3,8 +3,6 @@
 namespace Spatie\MailcoachSdk\Resources;
 
 use Spatie\MailcoachSdk\Mailcoach;
-use ReflectionObject;
-use ReflectionProperty;
 
 class ApiResource
 {
@@ -23,7 +21,6 @@ class ApiResource
 
     protected function fill(): void
     {
-
         foreach ($this->attributes as $key => $value) {
             $key = $this->camelCase($key);
 
@@ -33,14 +30,13 @@ class ApiResource
 
     public function toArray(): array
     {
-        $publicProperties =  get_object_vars($this);
+        $publicProperties = get_object_vars($this);
         unset($publicProperties['attributes']);
         unset($publicProperties['mailcoach']);
 
-
         $properties = [];
 
-        foreach($publicProperties as $key =>$value) {
+        foreach ($publicProperties as $key => $value) {
             $properties[$this->snakeCase($key)] = $value;
         }
 
