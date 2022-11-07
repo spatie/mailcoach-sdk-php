@@ -71,11 +71,11 @@ trait MakesHttpRequests
         }
 
         $preparedFilters = [];
-        foreach($filters as $name => $value) {
+        foreach ($filters as $name => $value) {
             $preparedFilters["filter[{$name}]"] = $value;
         }
 
-        return '?' . http_build_query($preparedFilters);
+        return '?'.http_build_query($preparedFilters);
     }
 
     protected function handleRequestError(ResponseInterface $response): void

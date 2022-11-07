@@ -5,14 +5,23 @@ namespace Spatie\MailcoachSdk\Resources;
 class Subscriber extends ApiResource
 {
     public string $uuid;
+
     public string $emailListUuid;
+
     public string $email;
+
     public ?string $firstName;
+
     public ?string $lastName;
+
     public array $extra_attributes = [];
+
     public array $tags = [];
+
     public ?string $subscribedAt;
+
     public ?string $createdAt;
+
     public ?string $updatedAt;
 
     public function save(): self

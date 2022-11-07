@@ -4,10 +4,10 @@ namespace Spatie\MailcoachSdk;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
-use Spatie\MailcoachSdk\Concerns\ManagesSubscribers;
-use Spatie\MailcoachSdk\Resources\ApiResource;
 use Spatie\MailcoachSdk\Concerns\MakesHttpRequests;
 use Spatie\MailcoachSdk\Concerns\ManagesEmailLists;
+use Spatie\MailcoachSdk\Concerns\ManagesSubscribers;
+use Spatie\MailcoachSdk\Resources\ApiResource;
 
 class Mailcoach
 {
