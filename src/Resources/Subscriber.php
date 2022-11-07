@@ -30,4 +30,20 @@ class Subscriber extends ApiResource
     {
         $this->mailcoach->deleteSubscriber($this->uuid);
     }
+
+    public function confirm(): self
+    {
+        $this->mailcoach->confirmSubscriber($this->uuid);
+
+        return $this;
+    }
+
+    public function unsubscribe(): self
+    {
+        $this->mailcoach->unsubscribeSubscriber($this->uuid);
+
+        return $this;
+    }
+
+
 }

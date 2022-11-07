@@ -2,7 +2,6 @@
 
 namespace Spatie\MailcoachSdk\Concerns;
 
-use Spatie\MailcoachSdk\Exceptions\NotFoundException;
 use Spatie\MailcoachSdk\Resources\Subscriber;
 
 trait ManagesSubscribers
@@ -46,5 +45,20 @@ trait ManagesSubscribers
     public function deleteSubscriber(string $subscriberUuid): void
     {
         $this->delete("subscribers/{$subscriberUuid}");
+    }
+
+    public function confirmSubscriber(string $subscriberUuid): void
+    {
+        $this->post("subscribers/{$subscriberUuid}/confirm");
+    }
+
+    public function unsubscribeSubscriber(string $subscriberUuid): void
+    {
+        $this->post("subscribers/{$subscriberUuid}/unsubscribe");
+    }
+
+    public function resendConfirmation(string $subscriberUuid): void
+    {
+        $this->post("subscribers/{$subscriberUuid}/resend-confirmation");
     }
 }
