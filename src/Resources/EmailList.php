@@ -1,7 +1,6 @@
 <?php
 
 namespace Spatie\MailcoachSdk\Resources;
-use Spatie\MailcoachSdk\Resources\Subscriber;
 
 class EmailList extends ApiResource
 {
@@ -65,8 +64,7 @@ class EmailList extends ApiResource
     }
 
     /**
-     * @param array<string, string> $filters
-     *
+     * @param  array<string, string>  $filters
      * @return array<int, Subscriber>
      */
     public function subscribers(array $filters = []): array

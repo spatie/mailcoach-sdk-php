@@ -31,17 +31,17 @@ it('can test', function () {
     */
 });
 
-it('subscribe', function() {
-   $freekDevUuid =  '590f564a-3f79-4981-8814-188fe39cc918';
+it('subscribe', function () {
+    $freekDevUuid = '590f564a-3f79-4981-8814-188fe39cc918';
 
-   $subscribers = $this->mailcoach->subscribers($freekDevUuid, ['search' => 'freek@spatie.be']);
+    $subscribers = $this->mailcoach->subscribers($freekDevUuid, ['search' => 'freek@spatie.be']);
 
     $subscribers[0]->firstName = '';
 
     $subscribers[0]->save();
 });
 
-it('create subscriber', function() {
+it('create subscriber', function () {
     /* test list uuid */
     $uuid = '63561a40-99da-406f-81c7-202d854a4dba';
 
@@ -55,4 +55,3 @@ it('create subscriber', function() {
 
     dd($subscriber);
 });
-

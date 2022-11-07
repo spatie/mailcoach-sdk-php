@@ -2,7 +2,6 @@
 
 namespace Spatie\MailcoachSdk\Concerns;
 
-use Spatie\MailcoachSdk\Exceptions\NotFoundException;
 use Spatie\MailcoachSdk\Resources\Subscriber;
 
 trait ManagesSubscribers
