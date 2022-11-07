@@ -1,6 +1,7 @@
 <?php
 
 namespace Spatie\MailcoachSdk\Resources;
+use Spatie\MailcoachSdk\Resources\Subscriber;
 
 class EmailList extends ApiResource
 {
@@ -35,6 +36,21 @@ class EmailList extends ApiResource
     public function delete()
     {
         $this->mailcoach->deleteEmailList($this->uuid);
+    }
+
+    /**
+     * @param array<string, string> $filters
+     *
+     * @return array<int, Subscriber>
+     */
+    public function subscribers(array $filters = []): array
+    {
+        return $this->subscribers($filters);
+    }
+
+    public function subscriber(string $email): ?Subscriber
+    {
+        return $this->mailcoach->findByEmail($this->uuid, $email);
     }
 
     public function save(): self

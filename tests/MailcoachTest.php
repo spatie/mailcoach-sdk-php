@@ -18,6 +18,7 @@ it('can test', function () {
     ]);
     */
 
+    /* test list uid
     $uuid = '63561a40-99da-406f-81c7-202d854a4dba';
 
     $emailList = $this->mailcoach->emailList($uuid);
@@ -27,4 +28,31 @@ it('can test', function () {
     $emailList->save();
 
     dd($emailList, 'saved');
+    */
 });
+
+it('subscribe', function() {
+   $freekDevUuid =  '590f564a-3f79-4981-8814-188fe39cc918';
+
+   $subscribers = $this->mailcoach->subscribers($freekDevUuid, ['search' => 'freek@spatie.be']);
+
+    $subscribers[0]->firstName = '';
+
+    $subscribers[0]->save();
+});
+
+it('create subscriber', function() {
+    /* test list uuid */
+    $uuid = '63561a40-99da-406f-81c7-202d854a4dba';
+
+    $subscriber = $this->mailcoach->findByEmail($uuid, 'freek@spatie.be');
+
+    $subscriber->first_name = 'Freek';
+
+    $subscriber->save();
+
+    $subscriber->delete();
+
+    dd($subscriber);
+});
+

@@ -26,6 +26,11 @@ trait MakesHttpRequests
         return $this->request('PUT', $uri, $payload);
     }
 
+    protected function patch(string $uri, array $payload = [])
+    {
+        return $this->request('PATCH', $uri, $payload);
+    }
+
     protected function delete(string $uri, array $payload = [])
     {
         return $this->request('DELETE', $uri, $payload);
@@ -57,6 +62,20 @@ trait MakesHttpRequests
         }
 
         return (int) substr($response->getStatusCode(), 0, 1) === 2;
+    }
+
+    protected function buildFilterString(array $filters): string
+    {
+        if (count($filters) === 0) {
+            return '';
+        }
+
+        $preparedFilters = [];
+        foreach($filters as $name => $value) {
+            $preparedFilters["filter[{$name}]"] = $value;
+        }
+
+        return '?' . http_build_query($preparedFilters);
     }
 
     protected function handleRequestError(ResponseInterface $response): void
