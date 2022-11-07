@@ -2,11 +2,11 @@
 
 use Spatie\MailcoachSdk\Mailcoach;
 
-beforeEach(function() {
-   $this->mailcoach = new Mailcoach(
-       $_ENV['MAILCOACH_TOKEN'],
-       $_ENV['MAILCOACH_ENDPOINT'],
-   );
+beforeEach(function () {
+    $this->mailcoach = new Mailcoach(
+        $_ENV['MAILCOACH_TOKEN'],
+        $_ENV['MAILCOACH_ENDPOINT'],
+    );
 });
 
 it('can test', function () {
