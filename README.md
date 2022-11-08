@@ -10,7 +10,7 @@ This package contains the PHP SDK to work with [Mailcoach](https://mailcoach.app
 Here are a few examples:
 
 ```php
-$mailcoach = new \Spatie\MailcoachSdk\Mailcoach('<api-key>', '<https://mailcoach-api-endpoint>')
+$mailcoach = new \Spatie\MailcoachSdk\Mailcoach('<api-key>', '<mailcoach-api-endpoint>')
 
 // creating a campaign
 $campaign = $mailcoach->createCampaign([
