@@ -5,9 +5,9 @@ namespace Spatie\MailcoachSdk;
 use Exception;
 use Psr\Http\Message\ResponseInterface;
 use Spatie\MailcoachSdk\Exceptions\ActionFailed;
+use Spatie\MailcoachSdk\Exceptions\InvalidData;
 use Spatie\MailcoachSdk\Exceptions\ResourceNotFound;
 use Spatie\MailcoachSdk\Exceptions\Unauthorized;
-use Spatie\MailcoachSdk\Exceptions\InvalidData;
 
 trait MakesHttpRequests
 {
