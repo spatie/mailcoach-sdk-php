@@ -116,6 +116,12 @@ You can get a single email list:
 $emailList = $this->mailcoach->emailList('<uuid-of-email-list>');
 ```
 
+This is how you can create an email list:
+
+```php
+$mailcoach->createEmailList(['name' => 'My new email list']);
+```
+
 You can get properties of email list:
 
 ```php
@@ -177,6 +183,15 @@ Alternatively, you can get a subscriber by its UUID:
 $subscriber = $mailcoach->subscriber('<subscriber-uuid>');
 ```
 
+This how you can create a subscriber:
+
+```php
+$subscriber = $mailcoach->createSubscriber([
+    'email' => 'john@example.com',
+    'email_list_uuid' => '<email-list-uuid>',
+]);
+```
+
 You can get properties of a subscriber:
 
 ```php
@@ -190,8 +205,8 @@ Take a look at the source code of `Spatie\MailcoachSdk\Resources\Subscriber` to 
 You can update a subscriber by change one of the properties and calling `save()`.
 
 ```
-$emailList->firstName = 'Updated name';
-$emailList->save();
+$subscriber->firstName = 'Updated name';
+$subscriber->save();
 ```
 
 You can confirm, unsubscribe and delete a subscriber by calling these methods.
@@ -204,7 +219,78 @@ $subscriber->delete();
 
 ### Working with campaigns
 
-TODO
+Here's how to get all campaigns.
+
+```php
+$campaigns = $mailcoach->campaigns();
+```
+
+You can also get a single campaign();
+
+```php
+$campaign = $mailcoach->campaign('<campaign-uuid>');
+```
+
+This is how you can create a campaign:
+
+```php
+$campaign = $this->mailcoach->createCampaign([
+   'name' => 'My new campaign',
+   'subject' => 'Here is some fantastic content for you',
+   'email_list_uuid' => '<email-list-uuid>'
+   
+   // optionally, you can specify the uuid of a template
+   'template_uuid' => '<template-uuid'>
+   
+   // if that template has field, you can pass the values
+   // in the `fields` array. If you use the markdown editor,
+   // we'll automatically handle any passed markdown
+   'fields' => [
+        'title' => 'Content for the title place holder',
+        'content' => '# My title',
+    ],    
+]);
+```
+
+You can get properties of a campaign:
+
+```php
+$campaign->name;
+$campaign->subject;
+// ...
+```
+
+Take a look at the source code of `Spatie\MailcoachSdk\Resources\Campaign` to see the list of available properties.
+
+You can update a campaign by change one of the properties and calling `save()`.
+
+```
+$campaign->name = 'Campaign';
+$campaign->save();
+```
+
+A test mail will be sent when calling `sendTest()`:
+
+```php
+// sending a test to a single person
+$campaign->sendTest('john@example.com');
+
+// sending a test to multiple persons
+$campaign->sendTest(['john@example.com', 'jane@example.com']);
+```
+
+The campaign will be sent to all subscribers of your list, by calling `send()`:
+
+```php
+$campaign->send();
+```
+
+A campaign can be deleted:
+
+```php
+$campaign->delete();
+```
+
 
 
 ## Testing
