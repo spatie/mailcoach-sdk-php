@@ -8,8 +8,7 @@ use Spatie\MailcoachSdk\Support\PaginatedResults;
 trait ManagesEmailLists
 {
     /**
-     * @param array<string, string> $filters
-     *
+     * @param  array<string, string>  $filters
      * @return PaginatedResults<EmailList>
      */
     public function emailLists(array $filters = []): PaginatedResults
