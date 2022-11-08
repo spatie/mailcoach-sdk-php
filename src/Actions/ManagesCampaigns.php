@@ -3,7 +3,6 @@
 namespace Spatie\MailcoachSdk\Actions;
 
 use Spatie\MailcoachSdk\Resources\Campaign;
-use Spatie\MailcoachSdk\Resources\EmailList;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
 
 trait ManagesCampaigns
@@ -11,7 +10,7 @@ trait ManagesCampaigns
     public function campaigns(): PaginatedResults
     {
         return PaginatedResults::make(
-            "campaigns",
+            'campaigns',
             Campaign::class,
             $this,
         );

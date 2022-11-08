@@ -11,7 +11,6 @@ use Spatie\MailcoachSdk\Actions\ManagesSubscribers;
 class Mailcoach
 {
     use MakesHttpRequests;
-
     use ManagesEmailLists;
     use ManagesSubscribers;
     use ManagesCampaigns;
