@@ -14,5 +14,11 @@ beforeEach(function () {
 use Spatie\MailcoachSdk\Mailcoach;
 
 it('can new up mailcoach', function () {
-    expect(new Mailcoach('fake-token', 'fake-uri'))->toBeInstanceOf(Mailcoach::class);
+    $mailcoach = new Mailcoach('fake-token', 'fake-uri');
+
+    expect($mailcoach)->toBeInstanceOf(Mailcoach::class);
+
+    expect($mailcoach->apiToken())->toBe('fake-token');
+    expect($mailcoach->endpoint())->toBe('fake-uri');
+
 });
