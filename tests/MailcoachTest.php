@@ -37,10 +37,10 @@ it('subscribers', function () {
     $subscribers = $this->mailcoach->subscribers($freekDevUuid);
 
     do {
-        foreach($subscribers as $subscriber) {
+        foreach ($subscribers as $subscriber) {
             dump($subscriber->email);
         }
-    } while($subscribers = $subscribers->next());
+    } while ($subscribers = $subscribers->next());
 });
 
 it('create subscriber', function () {
@@ -70,7 +70,6 @@ it('unsubscribe subscriber', function () {
     $uuid = '63561a40-99da-406f-81c7-202d854a4dba';
 
     $subscriber = $this->mailcoach->findByEmail($uuid, 'freek@spatie.be');
-
 
     $subscriber->unsubscribe();
     $subscriber->confirm();
