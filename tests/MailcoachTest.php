@@ -11,6 +11,8 @@ beforeEach(function () {
 });
 */
 
-it('can test', function() {
-   expect(true)->toBe(true);
+use Spatie\MailcoachSdk\Mailcoach;
+
+it('can new up mailcoach', function() {
+   expect(new Mailcoach('fake-token', 'fake-uri'))->toBeInstanceOf(Mailcoach::class);
 });
