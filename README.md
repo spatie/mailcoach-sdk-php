@@ -58,15 +58,158 @@ You can install the package via composer:
 composer require spatie/mailcoach-sdk-php
 ```
 
+You must also install Guzzle
+
+```bash
+composer require guzzlehttp/guzzle
+```
+
 ## Usage
 
-Coming soon...
+To get started, you must first new up an instance of `Spatie\MailcoachSdk\Mailcoach`
+
+```php
+use Spatie\MailcoachSdk\Mailcoach;
+
+$mailcoach = new Mailcoach('<your-api-key>', '<your-mailcoach-api-endpoint>')
+```
+
+You can find both the API key and the Mailcoach API endpoint in the "API Tokens" screen of the Mailcoach settings.
+
+### Handling pagination
+
+There are several methods, such as `emailLists()`, 'subscribers()' and `campaigns()` to will return paginated results. To get the next page of results just call `next()` on a result. If there are no more results, that method returns `null`.
+
+Here's how you display the email addresses of every subscriber on a list
+
+```php
+$subscribers = $mailcoach->subscribers('<email-list-uuid');
+
+do {
+    foreach($subscribers as $subscriber) {
+        echo $subscriber->email;
+    }
+} while($subscribers = $subscribers->next())
+```
+
+On paginated results, `$subscribers` in the example above there are also some more convenience methods:
+
+- `results()`: get the results. A results object is also iterable, so you can also get to the results by simply using the object in a loop
+- `next()`: fetch the next page of results
+- `previous()`: fetch the previous page of results
+- `currentPage()`: get the current page number
+- `total()`: get the total number of results across all pages
+- `nextUrl()`: get the URL that will be called to get the next page of results
+- `previousUrl()`: get the URL that will be called to get the previous page of results
+
+### Working with email lists
+
+Here's how to get all email lists:
+
+```php
+$emailLists = $this->mailcoach->emailLists();
+```
+
+You can get a single email list:
+
+```php
+$emailList = $this->mailcoach->emailList('<uuid-of-email-list>');
+```
+
+You can get properties of email list:
+
+```php
+$emailList->name;
+$emailList->uuid;
+// ...
+```
+
+Take a look at the source code of `Spatie\MailcoachSdk\Resources\EmailList` to see the list of available properties.
+
+You can update an email list by change one of the properties and calling `save()`.
+
+```
+$emailList->name = 'Updated name';
+$emailList->save();
+```
+
+You can delete an email list by calling `delete()`.
+
+```php
+$emailList->delete();
+```
+
+### Working with subscribers
+
+To get all subscribers of a list, you can call `subscribers()` on an email list.
+
+```php
+$subscribers = $this->mailcoach
+   ->emailList('<uuid-of-email-list>')
+   ->subscribers();
+```
+
+Optionally, you can pass filters to `subscribers()`. Here how to get all subscribers with a Gmail-address.
+
+```php
+$subscribers = $this->mailcoach
+   ->emailList('<uuid-of-email-list>')
+   ->subscribers(['filter[email]=gmail.com']);
+```
+
+Alternatively, you can call `subscribers()` on  `$mailcoach`
+
+```php
+$subscribers = $mailcoach->subscribers('<uuid-of-email-list>', $optionalFilters);
+```
+
+There's also a convenience method to quickly get a subscriber from a list.
+
+```php
+// returns instance of Spatie\MailcoachSdk\Resources\Subscriber
+// or null if the subscriber does not exist.
+
+$subscriber = $emaillist->subscriber('john@example.com');
+```
+Alternatively, you can get a subscriber by its UUID:
+
+```php
+$subscriber = $mailcoach->subscriber('<subscriber-uuid>');
+```
+
+You can get properties of a subscriber:
+
+```php
+$subscriber->firstName;
+$subscriber->email;
+// ...
+```
+
+Take a look at the source code of `Spatie\MailcoachSdk\Resources\Subscriber` to see the list of available properties.
+
+You can update a subscriber by change one of the properties and calling `save()`.
+
+```
+$emailList->firstName = 'Updated name';
+$emailList->save();
+```
+
+You can confirm, unsubscribe and delete a subscriber by calling these methods.
+
+```php
+$subscriber->confirm();
+$subscriber->unsubscribe();
+$subscriber->delete();
+```
+
+### Working with campaigns
+
+TODO
+
 
 ## Testing
 
-```bash
-composer test
-```
+
 
 ## Changelog
 
