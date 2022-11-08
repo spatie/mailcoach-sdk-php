@@ -11,32 +11,32 @@ use Spatie\MailcoachSdk\Exceptions\ValidationException;
 
 trait MakesHttpRequests
 {
-    protected function get(string $uri)
+    public function get(string $uri)
     {
         return $this->request('GET', $uri);
     }
 
-    protected function post(string $uri, array $payload = [])
+    public function post(string $uri, array $payload = [])
     {
         return $this->request('POST', $uri, $payload);
     }
 
-    protected function put(string $uri, array $payload = [])
+    public function put(string $uri, array $payload = [])
     {
         return $this->request('PUT', $uri, $payload);
     }
 
-    protected function patch(string $uri, array $payload = [])
+    public function patch(string $uri, array $payload = [])
     {
         return $this->request('PATCH', $uri, $payload);
     }
 
-    protected function delete(string $uri, array $payload = [])
+    public function delete(string $uri, array $payload = [])
     {
         return $this->request('DELETE', $uri, $payload);
     }
 
-    protected function request(string $verb, string $uri, array $payload = []): mixed
+    public function request(string $verb, string $uri, array $payload = []): mixed
     {
         $response = $this->client->request(
             $verb,

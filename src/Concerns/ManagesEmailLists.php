@@ -3,17 +3,21 @@
 namespace Spatie\MailcoachSdk\Concerns;
 
 use Spatie\MailcoachSdk\Resources\EmailList;
+use Spatie\MailcoachSdk\Support\PaginatedResults;
 
 trait ManagesEmailLists
 {
     /**
-     * @return array<int, EmailList>
+     * @param array<string, string> $filters
+     *
+     * @return PaginatedResults<EmailList>
      */
-    public function emailLists(): array
+    public function emailLists(array $filters = []): PaginatedResults
     {
-        return $this->transformCollection(
-            $this->get('email-lists')['data'],
+        return PaginatedResults::make(
+            "email-lists{$this->buildFilterString($filters)}",
             EmailList::class,
+            $this,
         );
     }
 

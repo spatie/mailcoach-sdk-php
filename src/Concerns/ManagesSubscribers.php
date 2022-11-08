@@ -3,17 +3,22 @@
 namespace Spatie\MailcoachSdk\Concerns;
 
 use Spatie\MailcoachSdk\Resources\Subscriber;
+use Spatie\MailcoachSdk\Support\PaginatedResults;
 
 trait ManagesSubscribers
 {
     /**
-     * @return array<int, Subscriber>
+     * @param string $emailListUuid
+     * @param array<string, string> $filters
+     *
+     * @return PaginatedResults<Subscriber>
      */
-    public function subscribers(string $emailListUuid, array $filters = []): array
+    public function subscribers(string $emailListUuid, array $filters = []): PaginatedResults
     {
-        return $this->transformCollection(
-            $this->get("email-lists/{$emailListUuid}/subscribers{$this->buildFilterString($filters)}")['data'],
+        return PaginatedResults::make(
+            "email-lists/{$emailListUuid}/subscribers{$this->buildFilterString($filters)}",
             Subscriber::class,
+            $this,
         );
     }
 

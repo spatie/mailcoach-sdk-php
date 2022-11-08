@@ -7,7 +7,6 @@ use GuzzleHttp\ClientInterface;
 use Spatie\MailcoachSdk\Concerns\MakesHttpRequests;
 use Spatie\MailcoachSdk\Concerns\ManagesEmailLists;
 use Spatie\MailcoachSdk\Concerns\ManagesSubscribers;
-use Spatie\MailcoachSdk\Resources\ApiResource;
 
 class Mailcoach
 {
@@ -30,18 +29,5 @@ class Mailcoach
                 'Content-Type' => 'application/json',
             ],
         ]);
-    }
-
-    /**
-     * @param  array<int, mixed>  $collection
-     * @param  class-string<ApiResource>  $class
-     * @return array<int, ApiResource>
-     */
-    protected function transformCollection(array $collection, string $class): array
-    {
-        return array_map(
-            fn ($attributes) => new $class($attributes, $this),
-            $collection,
-        );
     }
 }
