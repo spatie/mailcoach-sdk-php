@@ -11,6 +11,6 @@ beforeEach(function () {
 });
 */
 
-it('can test', function() {
-   expect(true)->toBe(true);
+it('can test', function () {
+    expect(true)->toBe(true);
 });
