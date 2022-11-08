@@ -5,7 +5,42 @@
 [![PHPStan](https://github.com/spatie/mailcoach-sdk-php/actions/workflows/phpstan.yml/badge.svg)](https://github.com/spatie/mailcoach-sdk-php/actions/workflows/phpstan.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/mailcoach-sdk-php.svg?style=flat-square)](https://packagist.org/packages/spatie/mailcoach-sdk-php)
 
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
+This package contains the PHP SDK to work with [Mailcoach](https://mailcoach.app). Both self-hosted and hosted Mailcoach are supported. Using this package you can manage email lists, subscribers and campaigns.
+
+Here are a few examples:
+
+```php
+$mailcoach = new \Spatie\MailcoachSdk\Mailcoach('<api-key>', '<https://mailcoach-api-endpoint>')
+
+// creating a campaign
+$campaign = $mailcoach->createCampaign([
+    'email_list_uuid' => 'use-a-real-email-list-uuid-here',
+    'name' => 'My new campaign'
+    'fields' => [
+        'title' => 'The title on top of the newsletter',
+        'content' => '# Welcome to my newsletter'
+    ],
+]);
+
+// sending a test of the campaign to the given email address
+$campaign->sendTest('john@example.com');
+
+// sending a campaign
+$campaign->send();
+```
+
+By default, Mailcoach' endpoints will are paginated with a limit of 1000. The package makes it easy to work with paginated resources. Just call `->next()` to get the next page.
+
+```php
+// listing all subscribers of a list
+$subscribers = $mailcoach->emailList('use-a-real-email-list-uuid-here')->subscribers();
+
+do {
+    foreach($subscribers as $subscriber) {
+        echo $subscriber->email;
+    }
+} while($subscribers = $subscribers->next())
+```
 
 ## Support us
 
