@@ -2,7 +2,6 @@
 
 namespace Spatie\MailcoachSdk\Actions;
 
-use Spatie\MailcoachSdk\Resources\EmailList;
 use Spatie\MailcoachSdk\Resources\Subscriber;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
 

@@ -13,7 +13,7 @@ class PaginatedResults implements ArrayAccess, IteratorAggregate
     public static function make(
         string $endpoint,
         string $mappingClass,
-        Mailcoach $mailcoach
+        Mailcoach $mailcoach,
     ): self {
         $response = $mailcoach->get($endpoint);
 

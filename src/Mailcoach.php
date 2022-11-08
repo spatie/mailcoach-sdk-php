@@ -15,13 +15,12 @@ class Mailcoach
     use ManagesSubscribers;
     use ManagesCampaigns;
 
-    protected ClientInterface $client;
-
     public function __construct(
         public string $apiToken,
         public string $baseUri,
+        public ?ClientInterface $client = null
     ) {
-        $this->client = new Client([
+        $this->client ??= new Client([
             'http_errors' => false,
             'base_uri' => $this->baseUri.'/',
             'headers' => [
