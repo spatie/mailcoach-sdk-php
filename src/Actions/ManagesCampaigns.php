@@ -23,7 +23,6 @@ trait ManagesCampaigns
         return new Campaign($attributes, $this);
     }
 
-
     public function createCampaign(array $data): Campaign
     {
         $attributes = $this->post('campaigns', $data);
