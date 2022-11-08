@@ -295,7 +295,9 @@ $campaign->delete();
 
 ## Testing
 
-
+```php
+composer test
+```
 
 ## Changelog
 
