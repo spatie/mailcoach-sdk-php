@@ -60,10 +60,7 @@ composer require spatie/mailcoach-sdk-php
 
 ## Usage
 
-```php
-$skeleton = new Spatie\MailcoachSdk();
-echo $skeleton->echoPhrase('Hello, Spatie!');
-```
+Coming soon...
 
 ## Testing
 
