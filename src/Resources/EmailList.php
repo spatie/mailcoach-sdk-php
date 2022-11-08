@@ -58,11 +58,6 @@ class EmailList extends ApiResource
 
     public string $updatedAt;
 
-    public function delete()
-    {
-        $this->mailcoach->deleteEmailList($this->uuid);
-    }
-
     /**
      * @param  array<string, string>  $filters
      * @return array<int, Subscriber>
@@ -84,6 +79,13 @@ class EmailList extends ApiResource
         $this->attributes = $emailList->toArray();
 
         $this->fill();
+
+        return $this;
+    }
+
+    public function delete(): self
+    {
+        $this->mailcoach->deleteEmailList($this->uuid);
 
         return $this;
     }

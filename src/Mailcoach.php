@@ -4,15 +4,17 @@ namespace Spatie\MailcoachSdk;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
-use Spatie\MailcoachSdk\Concerns\MakesHttpRequests;
-use Spatie\MailcoachSdk\Concerns\ManagesEmailLists;
-use Spatie\MailcoachSdk\Concerns\ManagesSubscribers;
+use Spatie\MailcoachSdk\Actions\ManagesCampaigns;
+use Spatie\MailcoachSdk\Actions\ManagesEmailLists;
+use Spatie\MailcoachSdk\Actions\ManagesSubscribers;
 
 class Mailcoach
 {
     use MakesHttpRequests;
+
     use ManagesEmailLists;
     use ManagesSubscribers;
+    use ManagesCampaigns;
 
     protected ClientInterface $client;
 

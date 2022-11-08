@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\MailcoachSdk\Concerns;
+namespace Spatie\MailcoachSdk;
 
 use Exception;
 use Psr\Http\Message\ResponseInterface;

@@ -84,3 +84,15 @@ it('delete subscriber', function () {
 
     $subscriber->delete();
 });
+
+
+it('can update a campaign', function() {
+    $campaigns = $this->mailcoach->campaigns();
+
+    $campaigns[0]->fields = [
+        'title' => 'updated title',
+        'content' => '#my new content'
+    ];
+
+    $campaigns[0]->save();
+});

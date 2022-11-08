@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\MailcoachSdk\Concerns;
+namespace Spatie\MailcoachSdk\Actions;
 
 use Spatie\MailcoachSdk\Resources\Subscriber;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
