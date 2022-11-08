@@ -13,6 +13,6 @@ beforeEach(function () {
 
 use Spatie\MailcoachSdk\Mailcoach;
 
-it('can new up mailcoach', function() {
-   expect(new Mailcoach('fake-token', 'fake-uri'))->toBeInstanceOf(Mailcoach::class);
+it('can new up mailcoach', function () {
+    expect(new Mailcoach('fake-token', 'fake-uri'))->toBeInstanceOf(Mailcoach::class);
 });
