@@ -55,4 +55,18 @@ class Campaign extends ApiResource
 
         return $this;
     }
+
+    public function sendTest(string|array $email): self
+    {
+        $this->mailcoach->sendTest($this->uuid, $email);
+
+        return $this;
+    }
+
+    public function send(): self
+    {
+        $this->mailcoach->send($this->uuid);
+
+        return $this;
+    }
 }

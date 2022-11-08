@@ -84,6 +84,12 @@ it('delete subscriber', function () {
     $subscriber->delete();
 });
 
+it('can create a campaign', function() {
+    $this->mailcoach->createCampaign([
+        'email_list_uuid' => '585c113f-8479-42cb-a0d4-5f472f82130e',
+        'name' => 'My campaign',
+    ]);
+});
 
 it('can update a campaign', function() {
     $campaigns = $this->mailcoach->campaigns();
@@ -94,4 +100,16 @@ it('can update a campaign', function() {
     ];
 
     $campaigns[0]->save();
+});
+
+it('can send a test', function() {
+   $campaign = $this->mailcoach->campaign('605554d7-6532-46c5-abb0-bfe657e9ed2b');
+
+   $campaign->sendTest('freek@spatie.be');
+});
+
+it('can send a campaign', function() {
+    $campaign = $this->mailcoach->campaign('605554d7-6532-46c5-abb0-bfe657e9ed2b');
+
+    $campaign->send();
 });
