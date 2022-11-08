@@ -53,6 +53,4 @@ class Subscriber extends ApiResource
 
         return $this;
     }
-
-
 }

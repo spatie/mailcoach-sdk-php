@@ -50,7 +50,7 @@ it('create subscriber', function () {
     $subscriber = $this->mailcoach->createSubscriber($uuid, ['email' => 'freek@spatie.be']);
 });
 
-it('update subscriber', function() {
+it('update subscriber', function () {
     /* test list uuid */
     $uuid = '63561a40-99da-406f-81c7-202d854a4dba';
 
@@ -65,7 +65,7 @@ it('update subscriber', function() {
     dd($subscriber);
 });
 
-it('unsubscribe subscriber', function() {
+it('unsubscribe subscriber', function () {
     /* test list uuid */
     $uuid = '63561a40-99da-406f-81c7-202d854a4dba';
 
@@ -76,7 +76,7 @@ it('unsubscribe subscriber', function() {
     $subscriber->confirm();
 });
 
-it('delete subscriber', function() {
+it('delete subscriber', function () {
     /* test list uuid */
     $uuid = '63561a40-99da-406f-81c7-202d854a4dba';
 
