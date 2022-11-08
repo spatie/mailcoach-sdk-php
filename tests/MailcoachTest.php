@@ -20,5 +20,4 @@ it('can new up mailcoach', function () {
 
     expect($mailcoach->apiToken())->toBe('fake-token');
     expect($mailcoach->endpoint())->toBe('fake-uri');
-
 });
