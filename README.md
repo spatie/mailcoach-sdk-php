@@ -107,13 +107,13 @@ On paginated results, `$subscribers` in the example above there are also some mo
 Here's how to get all email lists:
 
 ```php
-$emailLists = $this->mailcoach->emailLists();
+$emailLists = $mailcoach->emailLists();
 ```
 
 You can get a single email list:
 
 ```php
-$emailList = $this->mailcoach->emailList('<uuid-of-email-list>');
+$emailList = $mailcoach->emailList('<uuid-of-email-list>');
 ```
 
 This is how you can create an email list:
@@ -150,7 +150,7 @@ $emailList->delete();
 To get all subscribers of a list, you can call `subscribers()` on an email list.
 
 ```php
-$subscribers = $this->mailcoach
+$subscribers = $mailcoach
    ->emailList('<uuid-of-email-list>')
    ->subscribers();
 ```
@@ -158,7 +158,7 @@ $subscribers = $this->mailcoach
 Optionally, you can pass filters to `subscribers()`. Here how to get all subscribers with a Gmail-address.
 
 ```php
-$subscribers = $this->mailcoach
+$subscribers = $mailcoach
    ->emailList('<uuid-of-email-list>')
    ->subscribers(['filter[email]=gmail.com']);
 ```
@@ -234,7 +234,7 @@ $campaign = $mailcoach->campaign('<campaign-uuid>');
 This is how you can create a campaign:
 
 ```php
-$campaign = $this->mailcoach->createCampaign([
+$campaign = $this->createCampaign([
    'name' => 'My new campaign',
    'subject' => 'Here is some fantastic content for you',
    'email_list_uuid' => '<email-list-uuid>'
@@ -290,8 +290,6 @@ A campaign can be deleted:
 ```php
 $campaign->delete();
 ```
-
-
 
 ## Testing
 
