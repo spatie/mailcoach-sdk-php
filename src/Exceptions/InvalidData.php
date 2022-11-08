@@ -4,7 +4,7 @@ namespace Spatie\MailcoachSdk\Exceptions;
 
 use Exception;
 
-class ValidationException extends Exception
+class InvalidData extends Exception
 {
     public array $errors = [];
 

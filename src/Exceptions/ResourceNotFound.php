@@ -4,7 +4,7 @@ namespace Spatie\MailcoachSdk\Exceptions;
 
 use Exception;
 
-class NotFoundException extends Exception
+class ResourceNotFound extends Exception
 {
     public function __construct()
     {

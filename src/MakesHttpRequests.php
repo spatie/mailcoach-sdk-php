@@ -4,10 +4,10 @@ namespace Spatie\MailcoachSdk;
 
 use Exception;
 use Psr\Http\Message\ResponseInterface;
-use Spatie\MailcoachSdk\Exceptions\FailedActionException;
-use Spatie\MailcoachSdk\Exceptions\NotFoundException;
-use Spatie\MailcoachSdk\Exceptions\UnauthorizedException;
-use Spatie\MailcoachSdk\Exceptions\ValidationException;
+use Spatie\MailcoachSdk\Exceptions\ActionFailed;
+use Spatie\MailcoachSdk\Exceptions\ResourceNotFound;
+use Spatie\MailcoachSdk\Exceptions\Unauthorized;
+use Spatie\MailcoachSdk\Exceptions\InvalidData;
 
 trait MakesHttpRequests
 {
@@ -81,19 +81,19 @@ trait MakesHttpRequests
     protected function handleRequestError(ResponseInterface $response): void
     {
         if ($response->getStatusCode() === 422) {
-            throw new ValidationException(json_decode((string) $response->getBody(), true));
+            throw new InvalidData(json_decode((string) $response->getBody(), true));
         }
 
         if ($response->getStatusCode() === 404) {
-            throw new NotFoundException();
+            throw new ResourceNotFound();
         }
 
         if ($response->getStatusCode() === 400) {
-            throw new FailedActionException((string) $response->getBody());
+            throw new ActionFailed((string) $response->getBody());
         }
 
         if ($response->getStatusCode() === 401) {
-            throw new UnauthorizedException((string) $response->getBody());
+            throw new Unauthorized((string) $response->getBody());
         }
 
         throw new Exception((string) $response->getBody());

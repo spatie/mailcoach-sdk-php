@@ -4,7 +4,7 @@ namespace Spatie\MailcoachSdk\Exceptions;
 
 use Exception;
 
-class FailedActionException extends Exception
+class ActionFailed extends Exception
 {
     public function __construct(string $message)
     {
