@@ -2,6 +2,7 @@
 
 namespace Spatie\MailcoachSdk\Actions;
 
+use Spatie\MailcoachSdk\Resources\EmailList;
 use Spatie\MailcoachSdk\Resources\Subscriber;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
 
@@ -19,6 +20,13 @@ trait ManagesSubscribers
             Subscriber::class,
             $this,
         );
+    }
+
+    public function subscriber(string $uuid): Subscriber
+    {
+        $attributes = $this->get("email-lists/{$uuid}")['data'];
+
+        return new Subscriber($attributes, $this);
     }
 
     public function createSubscriber(string $emailListUuid, array $attributes): Subscriber
