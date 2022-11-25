@@ -23,7 +23,7 @@ trait ManagesSubscribers
 
     public function subscriber(string $uuid): Subscriber
     {
-        $attributes = $this->get("email-lists/{$uuid}")['data'];
+        $attributes = $this->get("subscribers/{$uuid}")['data'];
 
         return new Subscriber($attributes, $this);
     }
