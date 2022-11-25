@@ -2,6 +2,10 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.0.2 - 2022-11-25
+
+- fix subscriber endpoint
+
 ## 1.0.1 - 2022-11-08
 
 - correct exception names
