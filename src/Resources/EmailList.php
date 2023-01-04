@@ -2,6 +2,8 @@
 
 namespace Spatie\MailcoachSdk\Resources;
 
+use Spatie\MailcoachSdk\Support\PaginatedResults;
+
 class EmailList extends ApiResource
 {
     public string $uuid;
@@ -60,11 +62,11 @@ class EmailList extends ApiResource
 
     /**
      * @param  array<string, string>  $filters
-     * @return array<int, Subscriber>
+     * @return \Spatie\MailcoachSdk\Support\PaginatedResults
      */
-    public function subscribers(array $filters = []): array
+    public function subscribers(array $filters = []): PaginatedResults
     {
-        return $this->subscribers($filters);
+        return $this->mailcoach->subscribers($this->uuid, $filters);
     }
 
     public function subscriber(string $email): ?Subscriber
