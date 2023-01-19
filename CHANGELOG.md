@@ -2,6 +2,12 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.0.4 - 2023-01-19
+
+- make mailers optional
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.0.3...1.0.4
+
 ## 1.0.3 - 2023-01-04
 
 ### What's Changed
