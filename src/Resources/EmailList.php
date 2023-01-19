@@ -40,11 +40,11 @@ class EmailList extends ApiResource
 
     public ?string $confirmationMailableClass;
 
-    public string $campaignMailer;
+    public ?string $campaignMailer;
 
-    public string $automationMailer;
+    public ?string $automationMailer;
 
-    public string $transactionalMailer;
+    public ?string $transactionalMailer;
 
     public ?string $reportRecipients;
 
