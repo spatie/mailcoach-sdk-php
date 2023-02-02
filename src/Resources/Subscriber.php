@@ -14,7 +14,7 @@ class Subscriber extends ApiResource
 
     public ?string $lastName;
 
-    public array $extra_attributes = [];
+    public array $extraAttributes = [];
 
     public array $tags = [];
 
@@ -23,6 +23,8 @@ class Subscriber extends ApiResource
     public ?string $createdAt;
 
     public ?string $updatedAt;
+
+    public ?string $unsubscribedAt;
 
     public function save(): self
     {
