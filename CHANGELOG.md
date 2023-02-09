@@ -2,6 +2,15 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.0.5 - 2023-02-02
+
+### What's Changed
+
+- fix missing attributes in subscriber class
+- Bump dependabot/fetch-metadata from 1.3.5 to 1.3.6 by @dependabot in https://github.com/spatie/mailcoach-sdk-php/pull/8
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.0.4...1.0.5
+
 ## 1.0.4 - 2023-01-19
 
 - make mailers optional
