@@ -2,6 +2,12 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.1.0 - 2023-02-09
+
+- add resubscribe method as requested in https://github.com/spatie/laravel-mailcoach-sdk/issues/10
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.0.5...1.1.0
+
 ## 1.0.5 - 2023-02-02
 
 ### What's Changed
