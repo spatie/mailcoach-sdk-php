@@ -68,6 +68,11 @@ trait ManagesSubscribers
         $this->post("subscribers/{$subscriberUuid}/unsubscribe");
     }
 
+    public function resubscribeSubscriber(string $subscriberUuid): void
+    {
+        $this->post("subscribers/{$subscriberUuid}/resubscribe");
+    }
+
     public function resendConfirmation(string $subscriberUuid): void
     {
         $this->post("subscribers/{$subscriberUuid}/resend-confirmation");

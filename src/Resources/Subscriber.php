@@ -55,4 +55,11 @@ class Subscriber extends ApiResource
 
         return $this;
     }
+
+    public function resubscribe(): self
+    {
+        $this->mailcoach->resubscribeSubscriber($this->uuid);
+
+        return $this;
+    }
 }
