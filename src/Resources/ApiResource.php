@@ -4,6 +4,7 @@ namespace Spatie\MailcoachSdk\Resources;
 
 use Spatie\MailcoachSdk\Mailcoach;
 
+#[\AllowDynamicProperties]
 class ApiResource
 {
     public array $attributes = [];
