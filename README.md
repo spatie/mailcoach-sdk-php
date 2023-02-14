@@ -160,7 +160,7 @@ Optionally, you can pass filters to `subscribers()`. Here how to get all subscri
 ```php
 $subscribers = $mailcoach
    ->emailList('<uuid-of-email-list>')
-   ->subscribers(['filter[email]=gmail.com']);
+   ->subscribers(['email' => 'gmail.com']);
 ```
 
 Alternatively, you can call `subscribers()` on  `$mailcoach`
