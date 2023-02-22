@@ -8,7 +8,7 @@ class Campaign extends ApiResource
 
     public string $name;
 
-    public string $emailListUuid;
+    public ?string $emailListUuid;
 
     public ?string $fromEmail;
 
