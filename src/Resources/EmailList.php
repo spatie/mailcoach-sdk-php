@@ -16,7 +16,7 @@ class EmailList extends ApiResource
 
     public string $defaultFromEmail;
 
-    public string $defaultFromName;
+    public ?string $defaultFromName;
 
     public ?string $defaultReplyToMail;
 
