@@ -71,7 +71,7 @@ trait MakesHttpRequests
         }
 
         $preparedFilters = [];
-        foreach ($filters as $name => $value) {            
+        foreach ($filters as $name => $value) {
             $preparedFilters["filter[{$name}]"] = urlencode($value);
         }
 

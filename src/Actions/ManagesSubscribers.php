@@ -8,7 +8,6 @@ use Spatie\MailcoachSdk\Support\PaginatedResults;
 trait ManagesSubscribers
 {
     /**
-     * @param  string  $emailListUuid
      * @param  array<string, string>  $filters
      * @return PaginatedResults<Subscriber>
      */

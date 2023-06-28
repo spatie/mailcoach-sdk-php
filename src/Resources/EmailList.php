@@ -62,7 +62,6 @@ class EmailList extends ApiResource
 
     /**
      * @param  array<string, string>  $filters
-     * @return \Spatie\MailcoachSdk\Support\PaginatedResults
      */
     public function subscribers(array $filters = []): PaginatedResults
     {
