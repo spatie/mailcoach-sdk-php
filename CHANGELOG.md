@@ -2,6 +2,18 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.1.1 - 2023-06-28
+
+### What's Changed
+
+- URLencode filter values by @tinusg in https://github.com/spatie/mailcoach-sdk-php/pull/16
+
+### New Contributors
+
+- @tinusg made their first contribution in https://github.com/spatie/mailcoach-sdk-php/pull/16
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.1.0...1.1.1
+
 ## 1.1.0 - 2023-02-09
 
 - add resubscribe method as requested in https://github.com/spatie/laravel-mailcoach-sdk/issues/10
