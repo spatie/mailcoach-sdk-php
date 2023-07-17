@@ -36,9 +36,9 @@ trait ManagesSubscribers
 
     public function findByEmail(string $emailListUuid, string $email): ?Subscriber
     {
-        $encoded = urlencode($email);
+        $email = urlencode($email);
 
-        $subscribers = $this->get("email-lists/{$emailListUuid}/subscribers?filter[email]={$encoded}")['data'];
+        $subscribers = $this->get("email-lists/{$emailListUuid}/subscribers?filter[email]={$email}")['data'];
 
         if (count($subscribers) === 0) {
             return null;
