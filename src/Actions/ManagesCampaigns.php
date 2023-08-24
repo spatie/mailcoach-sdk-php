@@ -3,6 +3,10 @@
 namespace Spatie\MailcoachSdk\Actions;
 
 use Spatie\MailcoachSdk\Resources\Campaign;
+use Spatie\MailcoachSdk\Resources\CampaignBounce;
+use Spatie\MailcoachSdk\Resources\CampaignClick;
+use Spatie\MailcoachSdk\Resources\CampaignOpen;
+use Spatie\MailcoachSdk\Resources\CampaignUnsubscribe;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
 
 trait ManagesCampaigns
@@ -54,5 +58,41 @@ trait ManagesCampaigns
     public function send(string $campaignUuid): void
     {
         $this->post("campaigns/{$campaignUuid}/send");
+    }
+
+    public function campaignOpens(string $campaignUuid): PaginatedResults
+    {
+        return PaginatedResults::make(
+            "campaigns/{$campaignUuid}/opens",
+            CampaignOpen::class,
+            $this,
+        );
+    }
+
+    public function campaignClicks(string $campaignUuid): PaginatedResults
+    {
+        return PaginatedResults::make(
+            "campaigns/{$campaignUuid}/clicks",
+            CampaignClick::class,
+            $this,
+        );
+    }
+
+    public function campaignUnsubscribes(string $campaignUuid): PaginatedResults
+    {
+        return PaginatedResults::make(
+            "campaigns/{$campaignUuid}/unsubscribes",
+            CampaignUnsubscribe::class,
+            $this,
+        );
+    }
+
+    public function campaignBounces(string $campaignUuid): PaginatedResults
+    {
+        return PaginatedResults::make(
+            "campaigns/{$campaignUuid}/bounces",
+            CampaignBounce::class,
+            $this,
+        );
     }
 }
