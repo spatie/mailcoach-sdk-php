@@ -2,6 +2,18 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.2.0 - 2023-08-24
+
+### What's Changed
+
+- retrieve opens, clicks, unsubscribes and bounces for a given campaign by @smknstd in https://github.com/spatie/mailcoach-sdk-php/pull/19
+
+### New Contributors
+
+- @smknstd made their first contribution in https://github.com/spatie/mailcoach-sdk-php/pull/19
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.1.2...1.2.0
+
 ## 1.1.2 - 2023-07-17
 
 ### What's Changed
