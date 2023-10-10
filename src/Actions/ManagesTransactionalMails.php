@@ -8,12 +8,12 @@ trait ManagesTransactionalMails
 {
     use MakesHttpRequests;
 
-    /** @var array{'name': string, 'content': string, 'content_type': string, 'content_id': ?string} $attachments */
     public function sendTransactionMail(
         string $name,
         string $from,
         string $to,
         ?array $replacements = null,
+        /** @var array{'name': string, 'content': string, 'content_type': string, 'content_id': ?string} $attachments */
         ?array $attachments = null,
         ?string $subject = null,
         ?string $cc = null,
