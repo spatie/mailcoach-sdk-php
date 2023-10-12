@@ -186,9 +186,8 @@ $subscriber = $mailcoach->subscriber('<subscriber-uuid>');
 This how you can create a subscriber:
 
 ```php
-$subscriber = $mailcoach->createSubscriber([
+$subscriber = $mailcoach->createSubscriber('<email-list-uuid>', [
     'email' => 'john@example.com',
-    'email_list_uuid' => '<email-list-uuid>',
 ]);
 ```
 
