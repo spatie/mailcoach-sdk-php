@@ -2,6 +2,20 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.3.0 - 2023-11-03
+
+### What's Changed
+
+- Bump actions/checkout from 3 to 4 by @dependabot in https://github.com/spatie/mailcoach-sdk-php/pull/20
+- Bump stefanzweifel/git-auto-commit-action from 4 to 5 by @dependabot in https://github.com/spatie/mailcoach-sdk-php/pull/22
+- Send transaction Mail by @Nielsvanpach in https://github.com/spatie/mailcoach-sdk-php/pull/23
+
+### New Contributors
+
+- @Nielsvanpach made their first contribution in https://github.com/spatie/mailcoach-sdk-php/pull/23
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.2.0...1.3.0
+
 ## 1.2.0 - 2023-08-24
 
 ### What's Changed
