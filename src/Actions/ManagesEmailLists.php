@@ -3,6 +3,7 @@
 namespace Spatie\MailcoachSdk\Actions;
 
 use Spatie\MailcoachSdk\Resources\EmailList;
+use Spatie\MailcoachSdk\Resources\Tag;
 use Spatie\MailcoachSdk\Support\PaginatedResults;
 
 trait ManagesEmailLists
@@ -44,5 +45,12 @@ trait ManagesEmailLists
     public function deleteEmailList(string $uuid): void
     {
         $this->delete("email-lists/{$uuid}");
+    }
+
+    public function addTagToEmailList(string $uuid, array $data): Tag
+    {
+        $attributes = $this->post("email-lists/{$uuid}/tags", $data);
+
+        return new Tag($attributes, $this);
     }
 }

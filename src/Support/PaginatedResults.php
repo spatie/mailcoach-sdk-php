@@ -31,6 +31,10 @@ class PaginatedResults implements ArrayAccess, IteratorAggregate
         );
     }
 
+    /**
+     * @param array{previous: ?string, next: ?string} $links
+     * @param array{current_page: int, total: int} $meta
+     */
     public function __construct(
         protected array $results,
         protected array $links,
