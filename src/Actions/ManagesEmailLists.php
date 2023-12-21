@@ -53,4 +53,16 @@ trait ManagesEmailLists
 
         return new Tag($attributes, $this);
     }
+
+    public function updateTagOnEmailList(string $emailListUuid, string $tagUuid, array $data): Tag
+    {
+        $attributes = $this->put("email-lists/{$emailListUuid}/tags/{$tagUuid}", $data)['data'];
+
+        return new Tag($attributes, $this);
+    }
+
+    public function deleteTagFromEmailList(string $emailListUuid, string $tagUuid): void
+    {
+        $this->delete("email-lists/{$emailListUuid}/tags/{$tagUuid}");
+    }
 }
