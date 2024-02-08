@@ -2,6 +2,15 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.3.1 - 2024-02-08
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.3.0 to 2.3.1 by @dependabot in https://github.com/spatie/mailcoach-sdk-php/pull/25
+* use correct key for previous url by @Nielsvanpach in https://github.com/spatie/mailcoach-sdk-php/pull/28
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.3.0...1.3.1
+
 ## 1.3.0 - 2023-11-03
 
 ### What's Changed

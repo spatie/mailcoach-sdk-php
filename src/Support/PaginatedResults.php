@@ -32,7 +32,7 @@ class PaginatedResults implements ArrayAccess, IteratorAggregate
     }
 
     /**
-     * @param  array{previous: ?string, next: ?string}  $links
+     * @param  array{first: ?string, last: ?string, prev: ?string, next: ?string}  $links
      * @param  array{current_page: int, total: int}  $meta
      */
     public function __construct(
@@ -51,7 +51,7 @@ class PaginatedResults implements ArrayAccess, IteratorAggregate
 
     public function previousUrl(): ?string
     {
-        return $this->links['previous'];
+        return $this->links['prev'];
     }
 
     public function nextUrl(): ?string
