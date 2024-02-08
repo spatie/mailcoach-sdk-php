@@ -32,7 +32,7 @@ class PaginatedResults implements ArrayAccess, IteratorAggregate
     }
 
     /**
-     * @param array{first: ?string, last: ?string, prev: ?string, next: ?string} $links
+     * @param  array{first: ?string, last: ?string, prev: ?string, next: ?string}  $links
      */
     public function __construct(
         protected array $results,

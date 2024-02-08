@@ -13,15 +13,15 @@ trait ManagesTransactionalMails
         string $from,
         string $to,
         /** @param  array<string, string>  $replacements */
-        array $replacements = null,
+        ?array $replacements = null,
         /** @param  array{'name': string, 'content': string, 'content_type': string, 'content_id': ?string}  $attachments */
-        array $attachments = null,
-        string $subject = null,
-        string $cc = null,
-        string $bcc = null,
-        string $replyTo = null,
-        bool $fake = null,
-        bool $store = null
+        ?array $attachments = null,
+        ?string $subject = null,
+        ?string $cc = null,
+        ?string $bcc = null,
+        ?string $replyTo = null,
+        ?bool $fake = null,
+        ?bool $store = null
     ): void {
         $this->post('transactional-mails/send', [
             'mail_name' => $name,
