@@ -11,7 +11,7 @@ class ApiResource
 
     protected ?Mailcoach $mailcoach;
 
-    public function __construct(array $attributes, Mailcoach $mailcoach = null)
+    public function __construct(array $attributes, ?Mailcoach $mailcoach = null)
     {
         $this->attributes = $attributes;
 
