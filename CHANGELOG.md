@@ -2,6 +2,14 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.4.0 - 2024-02-09
+
+### What's Changed
+
+* Tags: GET, UPDATE & DELETE endpoints by @Nielsvanpach in https://github.com/spatie/mailcoach-sdk-php/pull/24
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.3.1...1.4.0
+
 ## 1.3.1 - 2024-02-08
 
 ### What's Changed
