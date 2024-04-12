@@ -2,6 +2,18 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.4.1 - 2024-04-12
+
+### What's Changed
+
+* Fix data retrieval when creating a campaign by @mariomka in https://github.com/spatie/mailcoach-sdk-php/pull/32
+
+### New Contributors
+
+* @mariomka made their first contribution in https://github.com/spatie/mailcoach-sdk-php/pull/32
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.4.0...1.4.1
+
 ## 1.4.0 - 2024-02-09
 
 ### What's Changed
