@@ -78,4 +78,12 @@ trait ManagesSubscribers
     {
         $this->post("subscribers/{$subscriberUuid}/resend-confirmation");
     }
+
+    public function isSubscribed(string $subscriberUuid): bool
+    {
+        $attributes = $this->get("subscribers/{$subscriberUuid}")['data'];
+        $subscriber = new Subscriber($attributes);
+
+        return is_null($subscriber->unsubscribedAt);
+    }
 }

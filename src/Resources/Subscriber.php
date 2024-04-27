@@ -62,4 +62,9 @@ class Subscriber extends ApiResource
 
         return $this;
     }
+
+    public function isSubscribed(): bool
+    {
+        return $this->mailcoach->isSubscribed($this->uuid);
+    }
 }
