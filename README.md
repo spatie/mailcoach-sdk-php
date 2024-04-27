@@ -216,6 +216,12 @@ $subscriber->unsubscribe();
 $subscriber->delete();
 ```
 
+You can check if a subscriber is currently subscribed.
+
+```php
+$subscriber->isSubscribed();
+```
+
 ### Working with campaigns
 
 Here's how to get all campaigns.
@@ -237,17 +243,17 @@ $campaign = $this->createCampaign([
    'name' => 'My new campaign',
    'subject' => 'Here is some fantastic content for you',
    'email_list_uuid' => '<email-list-uuid>',
-   
+
    // optionally, you can specify the uuid of a template
    'template_uuid' => '<template-uuid>',
-   
+
    // if that template has field, you can pass the values
    // in the `fields` array. If you use the markdown editor,
    // we'll automatically handle any passed markdown
    'fields' => [
         'title' => 'Content for the title place holder',
         'content' => '# My title',
-    ],    
+    ],
 ]);
 ```
 
