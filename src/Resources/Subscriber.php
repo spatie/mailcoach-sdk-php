@@ -49,6 +49,11 @@ class Subscriber extends ApiResource
         return $this;
     }
 
+    public function isSubscribed(): bool
+    {
+        return $this->unsubscribedAt === null;
+    }
+
     public function unsubscribe(): self
     {
         $this->mailcoach->unsubscribeSubscriber($this->uuid);
