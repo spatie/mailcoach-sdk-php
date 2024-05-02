@@ -2,6 +2,19 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.5.0 - 2024-05-02
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/spatie/mailcoach-sdk-php/pull/33
+* Fix #34 -- Added a isSubscribed method on the Subscriber resource by @philipsorensen in https://github.com/spatie/mailcoach-sdk-php/pull/37
+
+### New Contributors
+
+* @philipsorensen made their first contribution in https://github.com/spatie/mailcoach-sdk-php/pull/37
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.4.1...1.5.0
+
 ## 1.4.1 - 2024-04-12
 
 ### What's Changed
