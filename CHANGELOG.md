@@ -2,6 +2,21 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.6.0 - 2024-07-15
+
+### What's Changed
+
+* Bump ramsey/composer-install from 2 to 3 by @dependabot in https://github.com/spatie/mailcoach-sdk-php/pull/30
+* Bump dependabot/fetch-metadata from 1.6.0 to 2.1.0 by @dependabot in https://github.com/spatie/mailcoach-sdk-php/pull/36
+* Bump dependabot/fetch-metadata from 2.1.0 to 2.2.0 by @dependabot in https://github.com/spatie/mailcoach-sdk-php/pull/39
+* added Unsubscribe by Email method by @meminuygur in https://github.com/spatie/mailcoach-sdk-php/pull/40
+
+### New Contributors
+
+* @meminuygur made their first contribution in https://github.com/spatie/mailcoach-sdk-php/pull/40
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.5.0...1.6.0
+
 ## 1.5.0 - 2024-05-02
 
 ### What's Changed
