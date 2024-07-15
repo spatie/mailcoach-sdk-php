@@ -41,8 +41,7 @@ class PaginatedResults implements ArrayAccess, IteratorAggregate
         protected array $meta,
         protected Mailcoach $mailcoach,
         protected string $mappingClass
-    ) {
-    }
+    ) {}
 
     public function results(): array
     {

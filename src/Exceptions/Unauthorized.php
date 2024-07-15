@@ -4,6 +4,4 @@ namespace Spatie\MailcoachSdk\Exceptions;
 
 use Exception;
 
-class Unauthorized extends Exception
-{
-}
+class Unauthorized extends Exception {}
