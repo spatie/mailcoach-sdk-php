@@ -67,4 +67,18 @@ class Subscriber extends ApiResource
 
         return $this;
     }
+
+    public function removeTags(array $tags): self
+    {
+        $this->mailcoach->delete("subscribers/{$this->uuid}/tags", ['tags' => $tags]);
+
+        return $this;
+    }
+
+    public function addTags(array $tags): self
+    {
+        $this->mailcoach->post("subscribers/{$this->uuid}/tags", ['tags' => $tags]);
+
+        return $this;
+    }
 }

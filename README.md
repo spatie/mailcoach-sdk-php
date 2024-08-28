@@ -208,12 +208,14 @@ $subscriber->firstName = 'Updated name';
 $subscriber->save();
 ```
 
-You can confirm, unsubscribe and delete a subscriber by calling these methods.
-
+You can confirm, unsubscribe, resubscribe, delete a subscriber, and add or remove tags by calling these methods:
 ```php
 $subscriber->confirm();
 $subscriber->unsubscribe();
+$subscriber->resubscribe();
 $subscriber->delete();
+$subscriber->addTags(['abandoned-cart', 'product-updates']);
+$subscriber->removeTags(['abandoned-cart', 'product-updates']);
 ```
 
 ### Working with campaigns
