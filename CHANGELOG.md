@@ -2,6 +2,14 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.7.0 - 2024-08-28
+
+### What's Changed
+
+* removeTags & addTags functions added. by @meminuygur in https://github.com/spatie/mailcoach-sdk-php/pull/42
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.6.0...1.7.0
+
 ## 1.6.0 - 2024-07-15
 
 ### What's Changed
