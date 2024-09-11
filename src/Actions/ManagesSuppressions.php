@@ -33,7 +33,7 @@ trait ManagesSuppressions
             $payload[] = ['email' => $email];
         }
 
-        $this->post("suppressions", $payload);
+        $this->post('suppressions', $payload);
     }
 
     public function deleteSuppression(string $email): void
@@ -49,6 +49,6 @@ trait ManagesSuppressions
             $payload[] = ['email' => $email];
         }
 
-        $this->delete("suppressions", $payload);
+        $this->delete('suppressions', $payload);
     }
 }
