@@ -7,6 +7,7 @@ use GuzzleHttp\ClientInterface;
 use Spatie\MailcoachSdk\Actions\ManagesCampaigns;
 use Spatie\MailcoachSdk\Actions\ManagesEmailLists;
 use Spatie\MailcoachSdk\Actions\ManagesSubscribers;
+use Spatie\MailcoachSdk\Actions\ManagesSuppressions;
 use Spatie\MailcoachSdk\Actions\ManagesTransactionalMails;
 
 class Mailcoach
@@ -16,6 +17,7 @@ class Mailcoach
     use ManagesEmailLists;
     use ManagesSubscribers;
     use ManagesTransactionalMails;
+    use ManagesSuppressions;
 
     public function __construct(
         public string $apiToken,
