@@ -51,7 +51,12 @@ class Subscriber extends ApiResource
 
     public function isSubscribed(): bool
     {
-        return $this->unsubscribedAt === null;
+        return $this->subscribedAt !== null && $this->unsubscribedAt === null;
+    }
+
+    public function isUnconfirmed(): bool
+    {
+        return $this->subscribedAt === null && $this->unsubscribedAt === null;
     }
 
     public function unsubscribe(): self
