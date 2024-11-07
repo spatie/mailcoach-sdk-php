@@ -2,6 +2,12 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.7.1 - 2024-11-07
+
+* Don't double encode filter values as `http_build_query` already encodes
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.7.0...1.7.1
+
 ## 1.7.0 - 2024-08-28
 
 ### What's Changed
