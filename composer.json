@@ -23,6 +23,7 @@
         "pestphp/pest": "^1.20",
         "pestphp/pest-plugin-mock": "^1.0",
         "phpstan/phpstan": "^1.9",
+        "spatie/invade": "^2.1",
         "spatie/ray": "^1.28",
         "vlucas/phpdotenv": "^5.5"
     },
