@@ -25,6 +25,7 @@
         "phpstan/phpstan": "^1.9",
         "spatie/invade": "^2.1",
         "spatie/ray": "^1.28",
+        "tomb1n0/guzzle-mock-handler": "^1.7",
         "vlucas/phpdotenv": "^5.5"
     },
     "suggest": {
