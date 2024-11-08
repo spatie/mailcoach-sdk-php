@@ -2,6 +2,18 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.8.1 - 2024-11-08
+
+### What's Changed
+
+* Handle multiple test emails by @edalzell in https://github.com/spatie/mailcoach-sdk-php/pull/43
+
+### New Contributors
+
+* @edalzell made their first contribution in https://github.com/spatie/mailcoach-sdk-php/pull/43
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.8.0...1.8.1
+
 ## 1.8.0 - 2024-11-07
 
 * Fix `isSubscribed` returning `true` when subscriber wasn't confirmed
