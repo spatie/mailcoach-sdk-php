@@ -49,7 +49,7 @@ trait ManagesCampaigns
     public function sendTest(string $campaignUuid, string|array $email): void
     {
         if (is_array($email)) {
-            $email = implode($email);
+            $email = implode(',', $email);
         }
 
         $this->post("campaigns/{$campaignUuid}/send-test", ['email' => $email]);
