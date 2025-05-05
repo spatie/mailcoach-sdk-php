@@ -3,10 +3,45 @@
 namespace Spatie\MailcoachSdk\Actions;
 
 use Spatie\MailcoachSdk\MakesHttpRequests;
+use Spatie\MailcoachSdk\Resources\TransactionalMail;
+use Spatie\MailcoachSdk\Resources\TransactionalMailTemplate;
+use Spatie\MailcoachSdk\Support\PaginatedResults;
 
 trait ManagesTransactionalMails
 {
     use MakesHttpRequests;
+
+    public function transactionalMails(array $filters = []): PaginatedResults
+    {
+        return PaginatedResults::make(
+            "transactional-mails{$this->buildFilterString($filters)})",
+            TransactionalMail::class,
+            $this,
+        );
+    }
+
+    public function transactionalMail(string $uuid): TransactionalMail
+    {
+        $attributes = $this->get("transactional-mails/{$uuid}")['data'];
+
+        return new TransactionalMail($attributes, $this);
+    }
+
+    public function transactionalMailTemplates(array $filters = []): PaginatedResults
+    {
+        return PaginatedResults::make(
+            "transactional-mails/templates{$this->buildFilterString($filters)})",
+            TransactionalMailTemplate::class,
+            $this,
+        );
+    }
+
+    public function transactionalMailTemplate(string $uuid): TransactionalMailTemplate
+    {
+        $attributes = $this->get("transactional-mails/templates/{$uuid}")['data'];
+
+        return new TransactionalMailTemplate($attributes, $this);
+    }
 
     public function sendTransactionMail(
         string $name,
