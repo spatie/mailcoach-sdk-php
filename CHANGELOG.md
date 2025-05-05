@@ -2,6 +2,16 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.9.0 - 2025-05-05
+
+### What's Changed
+
+* Add transactional-mails to endpoints
+* Bump dependabot/fetch-metadata from 2.2.0 to 2.3.0 by @dependabot in https://github.com/spatie/mailcoach-sdk-php/pull/44
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/spatie/mailcoach-sdk-php/pull/45
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.8.1...1.9.0
+
 ## 1.8.1 - 2024-11-08
 
 ### What's Changed
