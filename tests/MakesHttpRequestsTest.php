@@ -1,5 +1,11 @@
 <?php
 
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
+use Spatie\MailcoachSdk\Exceptions\RateLimited;
 use Spatie\MailcoachSdk\Mailcoach;
 
 it('does not double encode', function () {
@@ -9,3 +15,29 @@ it('does not double encode', function () {
         'email' => 'info@spatie.be',
     ]))->toBe('?filter%5Bemail%5D=info%40spatie.be');
 });
+
+it('throws a rate limited exception when 429 response code', function () {
+    $client = mockClient([
+        new Response(429, ['Retry-After' => 45]),
+    ]);
+
+    $mailcoach = new Mailcoach('fake-token', 'fake-uri', $client);
+    $mailcoach->get('/');
+})->throws(RateLimited::class, 'The request was rate limited. Retry in 45 seconds.');
+
+it('handles when Retry-After is not present when 429 response code', function () {
+    $client = mockClient([
+        new Response(429),
+    ]);
+
+    $mailcoach = new Mailcoach('fake-token', 'fake-uri', $client);
+    $mailcoach->get('/');
+})->throws(RateLimited::class, 'The request was rate limited. Retry in 60 seconds.');
+
+function mockClient(array $responses): ClientInterface
+{
+    return new Client([
+        'handler' => HandlerStack::create(new MockHandler($responses)),
+        'http_errors' => false,
+    ]);
+}
