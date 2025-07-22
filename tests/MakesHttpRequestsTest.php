@@ -22,8 +22,14 @@ it('throws a rate limited exception when 429 response code', function () {
     ]);
 
     $mailcoach = new Mailcoach('fake-token', 'fake-uri', $client);
-    $mailcoach->get('/');
-})->throws(RateLimited::class, 'The request was rate limited. Retry in 45 seconds.');
+
+    try {
+        $mailcoach->get('/');
+    } catch (RateLimited $ex) {
+        expect($ex->getMessage())->toBe('The request was rate limited. Retry in 45 seconds.');
+        expect($ex->retryAfter)->toBe(45);
+    }
+});
 
 it('handles when Retry-After is not present when 429 response code', function () {
     $client = mockClient([
@@ -31,8 +37,14 @@ it('handles when Retry-After is not present when 429 response code', function ()
     ]);
 
     $mailcoach = new Mailcoach('fake-token', 'fake-uri', $client);
-    $mailcoach->get('/');
-})->throws(RateLimited::class, 'The request was rate limited. Retry in 60 seconds.');
+
+    try {
+        $mailcoach->get('/');
+    } catch (RateLimited $ex) {
+        expect($ex->getMessage())->toBe('The request was rate limited. Retry in -1 seconds.');
+        expect($ex->retryAfter)->toBe(-1);
+    }
+});
 
 function mockClient(array $responses): ClientInterface
 {

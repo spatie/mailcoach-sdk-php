@@ -82,7 +82,7 @@ trait MakesHttpRequests
     protected function handleRequestError(ResponseInterface $response): void
     {
         if ($response->getStatusCode() === 429) {
-            throw new RateLimited(intval($response->getHeader('Retry-After')[0] ?? 60));
+            throw new RateLimited(intval($response->getHeader('Retry-After')[0] ?? -1));
         }
 
         if ($response->getStatusCode() === 422) {
