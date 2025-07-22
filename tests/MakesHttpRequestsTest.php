@@ -26,7 +26,7 @@ it('throws a rate limited exception when 429 response code', function () {
     try {
         $mailcoach->get('/');
     } catch (RateLimited $ex) {
-        expect($ex->getMessage())->toBe('The request was rate limited. Retry in 45 seconds.');
+        expect($ex->getMessage())->toBe('The request was rate limited. Retry in 45 second(s).');
         expect($ex->retryAfter)->toBe(45);
     }
 });
@@ -41,7 +41,7 @@ it('handles when Retry-After is not present when 429 response code', function ()
     try {
         $mailcoach->get('/');
     } catch (RateLimited $ex) {
-        expect($ex->getMessage())->toBe('The request was rate limited. Retry in -1 seconds.');
+        expect($ex->getMessage())->toBe('The request was rate limited. Retry in -1 second(s).');
         expect($ex->retryAfter)->toBe(-1);
     }
 });
