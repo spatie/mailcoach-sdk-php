@@ -6,6 +6,7 @@ use Exception;
 use Psr\Http\Message\ResponseInterface;
 use Spatie\MailcoachSdk\Exceptions\ActionFailed;
 use Spatie\MailcoachSdk\Exceptions\InvalidData;
+use Spatie\MailcoachSdk\Exceptions\RateLimited;
 use Spatie\MailcoachSdk\Exceptions\ResourceNotFound;
 use Spatie\MailcoachSdk\Exceptions\Unauthorized;
 
@@ -80,6 +81,10 @@ trait MakesHttpRequests
 
     protected function handleRequestError(ResponseInterface $response): void
     {
+        if ($response->getStatusCode() === 429) {
+            throw new RateLimited(intval($response->getHeader('Retry-After')[0] ?? -1));
+        }
+
         if ($response->getStatusCode() === 422) {
             throw new InvalidData(json_decode((string) $response->getBody(), true));
         }
