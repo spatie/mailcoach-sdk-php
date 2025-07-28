@@ -2,6 +2,20 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.9.1 - 2025-07-28
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot[bot] in https://github.com/spatie/mailcoach-sdk-php/pull/46
+* feat: Add rate limited exception by @wsamoht in https://github.com/spatie/mailcoach-sdk-php/pull/48
+* Bump stefanzweifel/git-auto-commit-action from 5 to 6 by @dependabot[bot] in https://github.com/spatie/mailcoach-sdk-php/pull/47
+
+### New Contributors
+
+* @wsamoht made their first contribution in https://github.com/spatie/mailcoach-sdk-php/pull/48
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.9.0...1.9.1
+
 ## 1.9.0 - 2025-05-05
 
 ### What's Changed
