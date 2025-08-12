@@ -12,8 +12,8 @@ it('handles multiple test emails', function () {
     $response = (new GuzzleMockResponse('campaigns/123/send-test'))
         ->withMethod('post')
         ->withAssertion(fn (RequestInterface $request) => $this->assertEquals(
-            'email=foo%40bar.com%2Cbar%40foo.com',
-            (string) $request->getBody()
+            'email=foo@bar.com,bar@foo.com',
+            urldecode($request->getBody()->getContents())
         ));
 
     $handler->expect($response);
