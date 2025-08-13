@@ -4,6 +4,7 @@ namespace Spatie\MailcoachSdk;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use Spatie\MailcoachSdk\Actions\ManagesAutomations;
 use Spatie\MailcoachSdk\Actions\ManagesCampaigns;
 use Spatie\MailcoachSdk\Actions\ManagesEmailLists;
 use Spatie\MailcoachSdk\Actions\ManagesSubscribers;
@@ -12,6 +13,7 @@ use Spatie\MailcoachSdk\Actions\ManagesTransactionalMails;
 class Mailcoach
 {
     use MakesHttpRequests;
+    use ManagesAutomations;
     use ManagesCampaigns;
     use ManagesEmailLists;
     use ManagesSubscribers;

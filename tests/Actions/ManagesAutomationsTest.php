@@ -7,17 +7,17 @@ use Spatie\MailcoachSdk\Mailcoach;
 use Tomb1n0\GuzzleMockHandler\GuzzleMockHandler;
 use Tomb1n0\GuzzleMockHandler\GuzzleMockResponse;
 
-it('handles multiple test emails', function () {
+it('can trigger an automation', function () {
     $handler = new GuzzleMockHandler;
-    $response = (new GuzzleMockResponse('campaigns/123/send-test'))
+    $response = (new GuzzleMockResponse('automations/123/trigger'))
         ->withMethod('post')
         ->withAssertion(fn (RequestInterface $request) => $this->assertEquals(
-            'email=foo@bar.com,bar@foo.com',
+            'subscribers[0]=abc&subscribers[1]=def',
             urldecode($request->getBody()->getContents())
         ));
 
     $handler->expect($response);
 
     $mailcoach = new Mailcoach('', '', new Client(['handler' => HandlerStack::create($handler)]));
-    $mailcoach->sendTest('123', ['foo@bar.com', 'bar@foo.com']);
+    $mailcoach->triggerAutomation('123', ['abc', 'def']);
 });

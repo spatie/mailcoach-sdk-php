@@ -291,6 +291,16 @@ A campaign can be deleted:
 ```php
 $campaign->delete();
 ```
+### Working with automations
+
+If an automation has a webhook trigger configured, you can trigger it by:
+
+```php
+$mailcoach->triggerAutomation('<automation-uuid>', [
+    '<subscriber-uuid-1>',
+    '<subscriber-uuid-2>',
+]);
+```
 
 ## Testing
 
