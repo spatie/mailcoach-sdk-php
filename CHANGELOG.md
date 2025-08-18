@@ -2,6 +2,14 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.9.2 - 2025-08-18
+
+### What's Changed
+
+* feat: Add automation trigger by @wsamoht in https://github.com/spatie/mailcoach-sdk-php/pull/51
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.9.1...1.9.2
+
 ## 1.9.1 - 2025-07-28
 
 ### What's Changed
