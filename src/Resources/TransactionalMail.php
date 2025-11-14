@@ -10,11 +10,11 @@ class TransactionalMail extends ApiResource
 
     public string $from;
 
-    public string $to;
+    public string|array $to;
 
-    public string $cc;
+    public string|array $cc;
 
-    public string $bcc;
+    public string|array $bcc;
 
     public string $body;
 

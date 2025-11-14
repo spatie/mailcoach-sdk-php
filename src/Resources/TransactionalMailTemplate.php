@@ -8,11 +8,11 @@ class TransactionalMailTemplate extends ApiResource
 
     public string $name;
 
-    public string $to;
+    public string|array $to;
 
-    public string $cc;
+    public string|array $cc;
 
-    public string $bcc;
+    public string|array $bcc;
 
     public string $subject;
 
