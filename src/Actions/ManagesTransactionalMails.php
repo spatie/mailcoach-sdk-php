@@ -14,7 +14,7 @@ trait ManagesTransactionalMails
     public function transactionalMails(array $filters = []): PaginatedResults
     {
         return PaginatedResults::make(
-            "transactional-mails{$this->buildFilterString($filters)})",
+            "transactional-mails{$this->buildFilterString($filters)}",
             TransactionalMail::class,
             $this,
         );
@@ -30,7 +30,7 @@ trait ManagesTransactionalMails
     public function transactionalMailTemplates(array $filters = []): PaginatedResults
     {
         return PaginatedResults::make(
-            "transactional-mails/templates{$this->buildFilterString($filters)})",
+            "transactional-mails/templates{$this->buildFilterString($filters)}",
             TransactionalMailTemplate::class,
             $this,
         );
