@@ -2,6 +2,21 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.9.3 - 2025-11-14
+
+### What's Changed
+
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/spatie/mailcoach-sdk-php/pull/50
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/spatie/mailcoach-sdk-php/pull/49
+* Update issue template by @AlexVanderbist in https://github.com/spatie/mailcoach-sdk-php/pull/52
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/spatie/mailcoach-sdk-php/pull/53
+
+### New Contributors
+
+* @AlexVanderbist made their first contribution in https://github.com/spatie/mailcoach-sdk-php/pull/52
+
+**Full Changelog**: https://github.com/spatie/mailcoach-sdk-php/compare/1.9.2...1.9.3
+
 ## 1.9.2 - 2025-08-18
 
 ### What's Changed
