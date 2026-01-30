@@ -23,7 +23,7 @@ trait ManagesEmailLists
 
     public function createEmailList(array $data): EmailList
     {
-        $attributes = $this->post('email-lists', $data);
+        $attributes = $this->post('email-lists', $data)['data'];
 
         return new EmailList($attributes, $this);
     }
@@ -49,7 +49,7 @@ trait ManagesEmailLists
 
     public function addTagToEmailList(string $uuid, array $data): Tag
     {
-        $attributes = $this->post("email-lists/{$uuid}/tags", $data);
+        $attributes = $this->post("email-lists/{$uuid}/tags", $data)['data'];
 
         return new Tag($attributes, $this);
     }
