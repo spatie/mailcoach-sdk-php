@@ -2,6 +2,10 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.9.5 - 2026-01-31
+
+Fix array access in `createEmailList` and `addTagToEmailList`.
+
 ## 1.9.4 - 2026-01-23
 
 ### What's Changed
