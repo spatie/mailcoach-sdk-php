@@ -2,6 +2,12 @@
 
 All notable changes to `mailcoach-sdk-php` will be documented in this file.
 
+## 1.10.0 - 2026-05-29
+
+Added methods for managing automation mails (`automationMails`, `automationMail`, `createAutomationMail`, `updateAutomationMail`, `deleteAutomationMail`) and an `AutomationMail` resource.
+
+Upgraded the test toolchain to Pest 4; the minimum PHP version is now 8.3 and the suite runs on PHP 8.3, 8.4 and 8.5. See #63.
+
 ## 1.9.5 - 2026-01-31
 
 Fix array access in `createEmailList` and `addTagToEmailList`.
